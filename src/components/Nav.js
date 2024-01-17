@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function Nav() {
+
+    
+    const navigate = useNavigate();
+    const cartPage = () => {
+        navigate('/app/cart')
+    }
+
     return (
         <div className='nav'>
             <div className='nav-left'>
@@ -17,8 +25,8 @@ function Nav() {
                     <h4 className='nav-right-content'>Profile</h4>
                 </div>
 
-                <div className='nav-right-contents nav-right-contents-right'>
-                    <button className='nav-right-content-cart' >Cart</button>
+                <div className='nav-righ nav-right-contents-right'>
+                    <button className='nav-right-content-cart' onClick={cartPage}>Cart</button>
                 </div>
             </div>
         </div>
